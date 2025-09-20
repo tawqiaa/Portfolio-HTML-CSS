@@ -1,0 +1,438 @@
+* {
+    font-family: "Oswald", 'Courier New', Courier, monospace;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 25px 50px;
+    background-color: rgb(219, 221, 224);
+}
+
+:root {
+    --token-bab41936-ffcc-40bb-94aa-9ecbf5c4493c: rgb(0, 102, 255);
+    --token-fb3db409-bd89-4a09-871d-f327ee469d8d: rgb(46, 130, 255);
+    --token-bfca7135-4b78-4715-824f-7e5f77ac8515: rgb(61, 64, 71);
+    --token-629e8f16-5ade-4ad7-b8a2-06bcc1bc7825: rgb(232, 241, 255);
+    --token-6cf99252-6ea0-4550-81ea-ff3d61acf98f: rgb(237, 154, 28);
+    --token-a175bb08-5cdd-4eb2-99e2-e762d78ca8dc: rgb(123, 129, 142);
+    --token-b4f4226e-f15b-4454-afb4-d33aeae33c1e: rgb(243, 244, 245);
+    --token-f375a295-7a43-4a29-8639-6099ec1a5144: rgb(40, 42, 47);
+    --token-d62ffd6d-0365-4204-85b2-674429fa3b78: rgb(219, 221, 224);
+    --token-36db49d3-d72f-403e-8d33-52a82ad85813: rgb(0, 102, 255);
+}
+
+/* start header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 60px;
+    position: relative;
+}
+
+/* logo side */
+.logo-side {
+    position: relative;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 10px;
+    z-index: 1;
+}
+
+header .circal {
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    background-color: rgb(26, 26, 26);
+}
+
+header .logo {
+    text-transform: uppercase;
+    font-size: 30px;
+    font-weight: 500;
+    letter-spacing: -1px;
+    text-decoration: none;
+    color: rgb(26, 26, 26);
+    cursor: pointer;
+}
+
+/* nav-side */
+.nav-side {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 3;
+}
+
+.nav-side #checkboxMune {
+    display: none;
+}
+
+.nav-side .menu {
+    color: white;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 600;
+    position: absolute;
+    top: 50%;
+    right: 60px;
+    transform: translateY(-50%);
+    z-index: 2;
+}
+
+.nav-side .toggle {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    z-index: 2;
+}
+
+.nav-side .toggle .common {
+    width: 25px;
+    height: 2px;
+    background-color: white;
+    border-radius: 5px;
+    transition: 0.5s ease;
+}
+
+.nav-side #checkboxMune:checked~.toggle .top-line {
+    transform: rotate(45deg) translateY(9px);
+}
+
+.nav-side #checkboxMune:checked~.toggle .middle-line {
+    opacity: 0;
+}
+
+.nav-side #checkboxMune:checked~.toggle .bottom-line {
+    transform: rotate(-45deg) translateY(-9px);
+}
+
+nav {
+    background-color: black;
+    width: 125px;
+    height: 60px;
+    border-radius: 35px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    transition: 0.5s ease;
+    overflow: hidden;
+}
+
+.nav-side #checkboxMune:checked~nav {
+    width: 100%;
+    height: 500px;
+}
+
+nav .items {
+    width: 100%;
+    height: 80%;
+    margin-top: 60px;
+}
+
+nav .items .item {
+    list-style: none;
+    margin-bottom: 28px;
+    margin-left: 30px
+}
+
+nav .items .item a {
+    font-size: 25px;
+    font-weight: 500;
+    text-transform: capitalize;
+    text-decoration: none;
+    color: white;
+    transition: 0.1s ease;
+    opacity: 0.6;
+}
+
+nav .items .item a:hover {
+    border-bottom: 2px solid white;
+    opacity: 1;
+}
+
+/* start main */
+main {
+    height: 100vh;
+    width: 100%;
+    animation: main-up 0.5s ease-in-out 0s 1;
+}
+
+@keyframes main-up {
+    from{
+        transform: translateY(40px);
+    }
+    to{
+        transform: translateY(0);
+    }
+    
+}
+/* start hero section */
+.hero {
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.hero-text {
+    flex: 1;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-text h2 {
+    font-size: 40px;
+    font-weight: 300;
+}
+
+.hero-text h1 {
+    position: relative;
+    margin-top: 15px;
+    font-size: 80px;
+    font-weight: 600;
+    line-height: 1;
+}
+
+.hero-text h1 span {
+    font-family: "Dancing Script", cursive;
+}
+
+.hero-text p {
+    font-size: 20px;
+    font-weight: 300;
+    margin-top: 15px;
+}
+
+.hero-text .btn-contact {
+    width: 200px;
+    height: 60px;
+    border-radius: 35px;
+    margin-top: 15px;
+    background-color: black;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
+    cursor: pointer;
+    border: none;
+    transition: 0.5s ease-in-out;
+}
+
+.hero-text .btn-contact:hover {
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+}
+
+
+.hero .hero-img {
+    position: relative;
+    top: -85px;
+    height: 700px;
+    min-width: 400px;
+    flex: 2;
+    border-radius: 0 0 400px 400px;
+    overflow: hidden;
+    justify-self: center;
+}
+
+.hero .hero-img img {
+    width: 100%;
+    height: auto;
+    border-radius: 0 0 400px 400px;
+}
+
+.hero-stats {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 230px;
+}
+
+.hero-stats div {
+    font-size: 30px;
+    font-weight: 500;
+    text-align: end;
+    margin-top: 30px;
+}
+
+.hero-stats span {
+    display: block;
+    font-size: 20px;
+    font-weight: 300;
+    text-align: end;
+}
+
+
+/* Start features section */
+.features {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.features .feature {
+    width: 240px;
+    height: 80px;
+}
+
+.features .feature:not(:last-child) {
+    border-right: 1px solid rgb(33, 33, 33);
+    padding-right: 25px;
+}
+
+.features .feature h3 {
+    color: black;
+    text-transform: uppercase;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.features .feature p {
+    color: rgb(70, 70, 70);
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+
+@media (max-width: 480px) {
+
+    /* Styles for small mobile devices */
+    body {
+        margin: 25px;
+    }
+
+    .hero-text {
+        order: 2;
+    }
+
+    .hero-img {
+        order: 1;
+    }
+
+    .hero-stats {
+        order: 3;
+    }
+
+    .hero {
+        flex-direction: column;
+    }
+
+    .hero-stats {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+
+    /* Styles for large mobile devices and portrait tablets */
+    .hero-text {
+        order: 2;
+    }
+
+    .hero-img {
+        order: 1;
+    }
+
+    .hero-stats {
+        order: 3;
+    }
+
+    .hero {
+        flex-direction: column;
+    }
+
+    .hero-stats {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+    /* Styles for tablets (landscape) and small laptops */
+    .nav-side #checkboxMune:checked~nav {
+        width: 230px;
+        height: 500px;
+    }
+
+    nav .items .item a {
+        font-size: 30px;
+        font-weight: 100;
+    }
+
+    .hero-text {
+        width: 200px;
+    }
+
+    .hero-img {
+        flex: 1;
+    }
+
+    .hero {}
+
+    .hero-stats {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+}
+
+@media (min-width: 1025px) and (max-width: 1200px) {
+
+    /* Styles for desktops and large screens */
+    .nav-side #checkboxMune:checked~nav {
+        width: 230px;
+        height: 500px;
+    }
+
+    nav .items .item a {
+        font-size: 30px;
+        font-weight: 100;
+    }
+}
+
+@media (min-width: 1201px) {
+
+    /* Styles for extra large screens */
+    .nav-side #checkboxMune:checked~nav {
+        width: 230px;
+        height: 500px;
+    }
+
+    nav .items .item a {
+        font-size: 30px;
+        font-weight: 100;
+    }
+}
